@@ -1,9 +1,7 @@
 # Testing Concepts: Stubs, Fakes, Mocks, Spies, Dummies, Emulators, and Simulators
 
----
-
-# Introduction
-## What are we covering today?
+## Introduction
+### What are we covering today?
 - Understanding key testing concepts:
     - Stub
     - Faker
@@ -19,17 +17,17 @@
 
 ---
 
-# Stub
-## Definition
+## Stub
+### Definition
 - **Stub**: A simple implementation that provides predefined responses.
 
-## Characteristics
+### Characteristics
 - Static behavior.
 - Used to isolate the unit under test.
 - Returns hardcoded data.
 
-## Example
-### Spring Boot:
+### Example
+#### Spring Boot:
 ```java
 @Service
 public class UserServiceStub implements UserService {
@@ -42,16 +40,16 @@ public class UserServiceStub implements UserService {
 
 ---
 
-# Faker
-## Definition
+## Faker
+### Definition
 - **Faker**: A library that generates random, realistic test data.
 
-## Characteristics
+### Characteristics
 - Produces diverse and dynamic data.
 - Useful for load testing and edge cases.
 
-## Example
-### Angular:
+### Example
+#### Angular:
 ```typescript
 import { faker } from '@faker-js/faker';
 
@@ -64,16 +62,16 @@ const fakeUser = {
 
 ---
 
-# Mock
-## Definition
+## Mock
+### Definition
 - **Mock**: A simulated object that tracks interactions and mimics behavior.
 
-## Characteristics
+### Characteristics
 - Dynamic behavior.
 - Validates method calls and arguments.
 
-## Example
-### Odoo:
+### Example
+#### Odoo:
 ```python
 from unittest.mock import Mock
 
@@ -85,16 +83,16 @@ user_service_mock.get_user_by_id.return_value = {
 
 ---
 
-# Spy
-## Definition
+## Spy
+### Definition
 - **Spy**: A wrapper around a real implementation that tracks its interactions.
 
-## Characteristics
+### Characteristics
 - Allows partial mocking.
 - Verifies behavior without replacing logic.
 
-## Example
-### Spring Boot:
+### Example
+#### Spring Boot:
 ```java
 UserService realUserService = new UserService();
 UserService spyUserService = Mockito.spy(realUserService);
@@ -104,16 +102,16 @@ verify(spyUserService, times(1)).getUserById(1L);
 
 ---
 
-# Dummy
-## Definition
+## Dummy
+### Definition
 - **Dummy**: A placeholder object used to satisfy method signatures.
 
-## Characteristics
+### Characteristics
 - Unused in actual logic.
 - Exists only to fulfill parameter requirements.
 
-## Example
-### Angular:
+### Example
+#### Angular:
 ```typescript
 const dummyUser = { id: null, name: '', email: '' };
 service.someMethod(dummyUser);
@@ -121,12 +119,12 @@ service.someMethod(dummyUser);
 
 ---
 
-# Emulator
-## Definition
+## Emulator
+### Definition
 - **Emulator**: Mimics hardware or software environments for integration/system testing.
 
-## Example
-### Spring Boot:
+### Example
+#### Spring Boot:
 - Running a PostgreSQL emulator using Docker:
 ```yaml
 services:
@@ -136,12 +134,12 @@ services:
 
 ---
 
-# Simulator
-## Definition
+## Simulator
+### Definition
 - **Simulator**: Reproduces the behavior of a system without full replication.
 
-## Example
-### Odoo:
+### Example
+#### Odoo:
 ```python
 class OdooServerSimulator:
     def simulate_request(self, endpoint, payload):
@@ -150,8 +148,8 @@ class OdooServerSimulator:
 
 ---
 
-# Recap
-## Key Takeaways
+## Recap
+### Key Takeaways
 - **Stub**: Static responses for isolation.
 - **Faker**: Generates dynamic test data.
 - **Mock**: Simulates behavior and tracks interactions.
@@ -159,12 +157,3 @@ class OdooServerSimulator:
 - **Dummy**: Placeholder objects.
 - **Emulator**: Mimics systems for testing.
 - **Simulator**: Reproduces system behavior abstractly.
-
----
-
-#  Questions?
-## Let’s Discuss!
-- Any doubts?
-- Real-world use cases?
-
----
